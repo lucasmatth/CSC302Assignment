@@ -14,8 +14,7 @@ Meeting Time: October 9th, 2022. 1 hour 5 minutes.
 * Microsoft Excel is brought up briefly but is shot down due to Excel being too simplistic.
 * We also pick HTTML as our front-end development tool.
 * HTML allows us to store data offline, which is prevalent for our datasets.
-* HTML excells at connecting to different links and web pages, which is good for us to display the result
-using multitude of links.
+* HTML excells at connecting to different links and web pages, which is good for us to display the result using multitude of links.
 * HTML is a widely used language, which makes its tech support high.
 * HTML is also a relatively simple tool to use in regards to develop techs.
 * We've considered React but we opt not to, since React is complicated and it's known to evolve too much, thus it has terrible documentation power.
@@ -34,5 +33,5 @@ Dataset:
 * We settle on YouTube trending datasets, since a lot of us consume YouTube on a very regular basis.
 * One of our question is about determining whether publish time in a day affects the view count and how much so, since 
 some people are more active at a certain time of day than others. 
-* We will also examine the relationship between comment counts and view counts or like counts. This is because we know
-some videos have insane number of views but they barely get any comments. 
+* We will also examine the relationship between comment counts and view counts or like counts. This is because we know some videos have insane number of views but they barely get any comments. 
+* We plan to discuss more ways to analize the dataset in later meetings when we have built out more of the systems.
