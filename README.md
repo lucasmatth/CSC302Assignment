@@ -5,6 +5,6 @@ Database consists of 2400 video records from 10 different countries that are: Ru
 
 "Meeting Minutes" folder: where we keep our notes from each meeting
 
-"Documentation and Roadmap".md: contains information about documentation and our roadmap
+"Documentation&Roadmap.md": contains information about documentation and our roadmap
 
 "run": run this for automatically setup and run the project. 
