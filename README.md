@@ -10,8 +10,8 @@ Database consists of 2400 video records from 10 different countries that are: Ru
   Contains information about documentation and our roadmap
 
 ### "run": 
-  Is used for you the user to use the program. 
-  "run setup": to setup dependencies needed
-  "run start": to run the program as intended
-  "run test": to run the test suite
+  Is used for you the user to use the program.    
+  "run setup": to setup dependencies needed    
+  "run start": to run the program as intended    
+  "run test": to run the test suite    
   
