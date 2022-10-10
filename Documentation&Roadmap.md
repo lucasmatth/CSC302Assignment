@@ -30,3 +30,6 @@ Hopefully, we can derive our work so that Lucas does backend work while Cat does
 help each other along the way. We will strive to communciate and push each other to work on each components. 
 
 The next action that we will do is that we will upload the data into our working folder. We will then write a program that read to differentiate between different variables across the data and store them into some lists. We will also get started on writing functions that can gather all of one type and gather information, such as comparing each view counts to an average number of views and determine which videos have more views than the others by the time of day.
+
+3. 
+The datasets that we will use is YouTube Trending Videos in 2017-2018. We choose this because we consume YouTube videos in an unhealthy manner daily so we are wondering whether the time of day pertains to an increase number of views. We also want to see how much does comment counts increase in relation to view counts and compare that with like counts as well. We are curious about whether high number of comments in videos correlate more to increase of views or to increase of likes/dislikes number. Along the way, we will also probably find more information that's worth mentioning.
