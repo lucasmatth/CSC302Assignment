@@ -1,0 +1,15 @@
+if command -v python3 >/dev/null 2>&1 ; then
+    echo "Python3 found"
+    echo "Version: $(python3 --version)"
+else
+    echo "Python3 not found"
+    sudo apt-get install python3
+fi
+
+if python3 -c 'import pkgutil; exit(not pkgutil.find_loader("django"))'; then
+    echo "Django found"
+    echo "Version: Django $(python3 -m django --version)"
+else
+    echo "Django not found"
+    python3 -m pip install Django
+fi

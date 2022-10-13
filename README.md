@@ -11,7 +11,9 @@ Database consists of 2400 video records from 10 different countries that are: Ru
 
 ### "run": 
   Is used for you the user to use the program.    
-  "run setup": to setup dependencies needed    
-  "run start": to run the program as intended    
-  "run test": to run the test suite    
+  "./setup": to setup dependencies needed    
+  "./start": to run the program as intended    
+  "./test": to run the test suite   
+
+  If these don't work as intended, in your terminal, write "chmod 777 setup" for example. 
   
