@@ -9,5 +9,5 @@ For Luke:
 * How long it takes for a video to go from published to trending
 * From there see if I can break the data into groups by something like quick medium and long periods between publish to trending and see the differences in comments and likes
 
-For Chau Cat Bui:
-* 
+For Bui:
+* Print a pyplot in html
