@@ -11,3 +11,6 @@ def make_query(statement):
 def make_plot(data):
     #this function will take in some data and make a plot out of it somehow
     pass
+
+def send_plot_to_front():
+    pass

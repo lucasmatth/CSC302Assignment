@@ -1,16 +1,16 @@
 # CSC302Assignment
 This is an application that will do general analysis on trending youtube videos.
 
-Database consists of 2400 video records from 10 different countries that are: Russia, Canada, Germany, USA, India, United Kingdom, France, Mexico, Korea, and Japan for a total of 24000 videos.
+Database consists of 4300 video records from 10 different countries that are: Russia, Canada, Germany, USA, India, United Kingdom, France, Mexico, Korea, and Japan for a total of 43000 videos.
 
 ### "Meeting Minutes" folder: 
   Where we keep our notes from each meeting
 
-### "Documentation&Roadmap.md": 
-  Contains information about documentation and our roadmap
+### "Documentation and Roadmap" folder": 
+  Contains information about documentation and our roadmap.
+  There are 2 versions. One from A1 and a revised one for A2
 
-### "run": 
-  Is used for you the user to use the program.    
+### how to run:     
   "./setup": to setup dependencies needed    
   "./start": to run the program as intended    
   "./test": to run the test suite   

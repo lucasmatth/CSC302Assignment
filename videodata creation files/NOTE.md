@@ -1,0 +1,3 @@
+Just a quick note. These are the files used to make the curated database we are using for the assignment but I could not include the source csv's or intermediate database due to the file size limit on github. This is also the reason why we have only 43000 videos to do analysis on instead of the hundreds of thousands from the original dataset
+
+Dataset can be found at this link: https://www.kaggle.com/datasets/datasnaek/youtube-new?resource=download
