@@ -1,5 +1,5 @@
 Present: Chau Cat Bui and Lucas Matthews.
-Meeting Time: October 18th, 2022. 15 minutes.
+Meeting Time: October 25th, 2022. 15 minutes.
 
 * We were both really busy last week due to midterm season, and therefore did not get much notable done
 * Decided to set some goals and have them done for the weekend where we will have a more in depth meeting
