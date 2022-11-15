@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import sqlite3
 import datetime
 import numpy as np
+import json
 
 def calc_mean(days_dic):
     total = np.sum(np.multiply(np.array(list(days_dic.keys())), np.array(list(days_dic.values()))))
@@ -28,21 +29,19 @@ def calc_percent(days_dic):
         percent.append(float(days_dic[ele])/float(total))
     return percent
 
-con = sqlite3.connect("videodata.db")
+def calc_standard_div(days_dic):
+    return np.std(np.array(list(days_dic)))
+
+con = sqlite3.connect("../../videodata.db")
 cur = con.cursor()
 
 data = con.execute('''SELECT
 id, trending_date, publish_time, views, likes, dislikes
 FROM videodata''').fetchall()
+con.close()
 
-print(data[2400])
-blah = datetime.datetime.strptime(data[2402][2].split('T')[0], "%Y-%m-%d")
-blah2 = datetime.datetime.strptime(('20'+data[2402][1]), "%Y.%d.%m")
-#for ele in stuff:
-#    ele[1] = datetime.datetime.strptime(ele[1], 
 days_dic = {}
 vid_list_by_day = {}
-
 for ele in data:
     pub_date = datetime.datetime.strptime(ele[2].split('T')[0], "%Y-%m-%d")
     trend_date = datetime.datetime.strptime(('20'+ele[1]), "%Y.%d.%m")
@@ -55,14 +54,24 @@ for ele in data:
     else:
         vid_list_by_day[(trend_date-pub_date).days] = [ele]
 
+days_dic = dict(sorted(days_dic.items()))
+
+days_dic_copy = dict(days_dic)
+for ele in list(days_dic_copy):
+    if days_dic_copy[ele] <= 1:
+        del days_dic_copy[ele]
+
 mean = calc_mean(days_dic)
 median = calc_median(vid_list_by_day)
 mode = calc_mode(days_dic)
-#sd = calc_standard_div()
+sd = calc_standard_div(days_dic)
+end_data = {"mean": mean, "median": median, "mode": mode, "sd": sd}
+with open('data.json', 'w', encoding='utf-8') as f:
+          json.dump(end_data, f)
+
 percent = calc_percent(days_dic)
-plt.bar(list(days_dic.keys()), percent, width=1)
-plt.show()
-print(mean)
-print(median)
-print(mode)
-con.close()
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.bar([str(x) for x in list(days_dic.keys())], percent, width=1)
+plt.savefig('days_plot.png')
