@@ -4,7 +4,10 @@ import json
 
 # Create your views here.
 def index(request):
-    return HttpResponse("I am running! I'm gonna talk to a database!")
+    return render(request, 'index.html')
+
+def first_data(request):
+    return render(request, 'firstdata.html')
 
 def date_til_trend(request):
     stats_f = open("../../data analysis/days til trend/data")
