@@ -15,5 +15,7 @@ Database consists of 4300 video records from 10 different countries that are: Ru
   "./start": to run the program as intended    
   "./test": to run the test suite   
 
+  Where we write our code is at http://127.0.0.1:8000/mainapp/
+  
   If these don't work as intended, in your terminal, write "chmod 777 setup" for example. 
   
