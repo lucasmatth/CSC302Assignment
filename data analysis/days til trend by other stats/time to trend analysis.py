@@ -40,6 +40,12 @@ def calc_mean_byday(vid_list_by_day, which):
                 total += vid[6]
             if which == "views":
                 total += vid[3]
+            if which == "likes":
+                total += vid[4]
+            if which == "dislikes":
+                total += vid[5]
+            if which == "totrate":
+                total += vid[4]+vid[5]
         total = total / len(vid_list_by_day[ele])
         all_totals.append(total)
     return all_totals
@@ -53,6 +59,12 @@ def calc_sd_byday(vid_list_by_day, which):
                 all_comments.append(vid[6])
             if which == "views":
                 all_comments.append(vid[3])
+            if which == "likes":
+                all_comments.append(vid[4])
+            if which == "dislikes":
+                all_comments.append(vid[5])
+            if which == "totrate":
+                all_comments.append(vid[4]+vid[5])
         all_totals.append(np.std(np.array(list(all_comments))))
     return all_totals
 
@@ -65,6 +77,12 @@ def calc_tot_byday(vid_list_by_day, which):
                 total += vid[6]
             if which == "views":
                 total += vid[3]
+            if which == "likes":
+                total += vid[4]
+            if which == "dislikes":
+                total += vid[5]
+            if which == "totrate":
+                total += vid[4]+vid[5]
         all_totals.append(total)
     return all_totals
 
@@ -182,4 +200,112 @@ plt.bar([str(x) for x in list(days_dic.keys())], sd_byday_views, width=1, color=
 plt.savefig('sd_byday_views.png')
 with open('sd_views_byday.json', 'w', encoding='utf-8') as f:
     json.dump(dict(zip(list(days_dic.keys()), sd_byday_views)), f)
+plt.show()
+
+total_likes_byday = calc_tot_byday(vid_list_by_day, 'likes')
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Number of likes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], total_likes_byday, width=1, color='#000080')
+plt.savefig('total_likes_byday.png')
+with open('total_likes_byday', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), total_likes_byday)), f)
+plt.show()
+
+mean_likes_byday = calc_mean_byday(vid_list_by_day, "likes")
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Mean number or likes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], mean_likes_byday, width=1, color='#800000')
+plt.savefig('mean_likes_byday.png')
+with open('mean_likes_byday.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), mean_likes_byday)), f)
+plt.show()
+
+sd_likes_byday = calc_sd_byday(vid_list_by_day, "likes")
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Standard Deviation of number of likes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], sd_likes_byday, width=1, color='#800080')
+plt.savefig('sd_likes_byday.png')
+with open('sd_likes_byday.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), sd_likes_byday)), f)
+plt.show()
+
+total_dislikes_byday = calc_tot_byday(vid_list_by_day, 'dislikes')
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Number of dislikes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], total_dislikes_byday, width=1, color='#000080')
+plt.savefig('total_dislikes_byday.png')
+with open('total_dislikes_byday', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), total_dislikes_byday)), f)
+plt.show()
+
+mean_dislikes_byday = calc_mean_byday(vid_list_by_day, "dislikes")
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Mean number or dislikes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], mean_dislikes_byday, width=1, color='#800000')
+plt.savefig('mean_dislikes_byday.png')
+with open('mean_dislikes_byday.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), mean_dislikes_byday)), f)
+plt.show()
+
+sd_dislikes_byday = calc_sd_byday(vid_list_by_day, "dislikes")
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Standard Deviation of number of dislikes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], sd_dislikes_byday, width=1, color='#800080')
+plt.savefig('sd_dislikes_byday.png')
+with open('sd_dislikes_byday.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), sd_dislikes_byday)), f)
+plt.show()
+
+total_rating_byday = calc_tot_byday(vid_list_by_day, 'totrate')
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Number of likes and dislikes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], total_rating_byday, width=1, color='#000080')
+plt.savefig('total_rating_byday.png')
+with open('total_rating_byday', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), total_rating_byday)), f)
+plt.show()
+
+mean_rating_byday = calc_mean_byday(vid_list_by_day, "totrate")
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Mean number or likes and dislikes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], mean_rating_byday, width=1, color='#800000')
+plt.savefig('mean_rating_byday.png')
+with open('mean_rating_byday.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), mean_rating_byday)), f)
+plt.show()
+
+sd_rating_byday = calc_sd_byday(vid_list_by_day, "totrate")
+plt.figure(figsize=(20,10))
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(rotation=40)
+plt.xlabel("Number of days from post to trending", fontsize=16)
+plt.ylabel("Standard Deviation of number of likes and dislikes", fontsize=16)
+plt.bar([str(x) for x in list(days_dic.keys())], sd_rating_byday, width=1, color='#800080')
+plt.savefig('sd_rating_byday.png')
+with open('sd_rating_byday.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(days_dic.keys()), sd_rating_byday)), f)
 plt.show()
