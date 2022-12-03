@@ -61,4 +61,6 @@ plt.xlabel('Total views range', fontsize=16)
 plt.ylabel('Number of videos', fontsize=16)
 plt.bar(list(views_dic_num.keys()), list(views_dic_num.values()), width=1, color='#000080')
 plt.savefig('num_of_vid_by_view.png')
+with open('total_vid_by_view.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(views_dic_num.keys())), list(views_dic_num.keys())), f)
 plt.show()
