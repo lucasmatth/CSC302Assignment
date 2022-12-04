@@ -19,3 +19,5 @@ Database consists of 4300 video records from 10 different countries that are: Ru
   
   If these don't work as intended, in your terminal, write "chmod 777 setup" for example. 
   
+  ### Logging:  
+    Will be found in the folder mysite while running the program

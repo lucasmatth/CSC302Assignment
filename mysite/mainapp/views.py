@@ -11,7 +11,7 @@ def first_data(request):
 
 def date_til_trend(request):
     stats_f = open("../../data analysis/days til trend/data")
-    stats = json.load(data_f)
+    stats = json.load(stats_f)
     graph_f = open("../../data analysis/days til trend/days_plot", "rb")
     graph = graph_f.read()
     data = {
