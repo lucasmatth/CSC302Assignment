@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import sqlite3
+import json
 
 def calc_mean_byday(vid_list_by_day, which):
     all_totals = []
@@ -46,31 +47,38 @@ for ele in data:
 hours_dic_num = dict(sorted(hours_dic_num.items()))
 hours_dic_vids = dict(sorted(hours_dic_vids.items()))
 
-plt.figure(figsize=(20,10))
-plt.tick_params(axis='both', labelsize=10)
-plt.xticks(rotation=40)
+plt.figure(figsize=(40,10))
+plt.tick_params(axis='both', labelsize=9)
+plt.xticks(rotation=50)
 plt.xlabel('Hour of day', fontsize=16)
 plt.ylabel('Number of videos', fontsize=16)
 plt.bar([str(x) for x in list(hours_dic_num.keys())], list(hours_dic_num.values()), width=1, color='#000080')
 plt.savefig('num_vid_by_hour.png')
+with open('total_vid_by_hour.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(hours_dic_num.keys()), list(hours_dic_num.values()))), f)
 plt.show()
 
 total_views_by_hour = calc_tot_by_hour(hours_dic_vids, 'views')
-plt.figure(figsize=(20,10))
-plt.tick_params(axis='both', labelsize=10)
-plt.xticks(rotation=40)
+plt.figure(figsize=(40,10))
+plt.tick_params(axis='both', labelsize=9)
+plt.xticks(rotation=50)
 plt.xlabel('Hour of day', fontsize=16)
 plt.ylabel('Total views', fontsize=16)
 plt.bar([str(x) for x in list(hours_dic_num.keys())], total_views_by_hour, width=1, color='#000080')
-plt.savefig('num_vid_by_hour.png')
+plt.savefig('total_views_by_hour.png')
+with open('total_views_by_hour.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(hours_dic_num.keys()), total_views_by_hour)), f)
 plt.show()
 
 mean_byday_views = calc_mean_byday(hours_dic_vids, "views")
-plt.figure(figsize=(20,10))
-plt.tick_params(axis='both', labelsize=10)
-plt.xticks(rotation=40)
+plt.figure(figsize=(40,10))
+plt.tick_params(axis='both', labelsize=9)
+plt.xticks(rotation=50)
 plt.xlabel("Hours of day", fontsize=16)
 plt.ylabel("Mean number of views", fontsize=16)
 plt.bar([str(x) for x in list(hours_dic_num.keys())], mean_byday_views, width=1, color='#800000')
 plt.savefig('mean_views_by_hour.png')
+with open('mean_views_by_hour.json', 'w', encoding='utf-8') as f:
+    json.dump(dict(zip(list(hours_dic_num.keys()), mean_byday_views)), f)
 plt.show()
+

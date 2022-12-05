@@ -22,18 +22,18 @@ handled a little bit about Typescript and is good with Python and C. Cat can usu
 
 2. 
 November 7:
-    - Lucas should be done at least 1 set of data with some graphs included so that Cat can start working on making the front end display it properly.
-    - Cat is blocked on Lucas so he will do some research on how Django interacts with custom HTML pages to be used for display instead of the build in pages
-November 14:
-    - Cat displays data on page.
-    - Lucas adds more sets of data at least one of the ones outlined in A1
-November 21:
-    - In this week ideally we will be both adding new datas to our databank to be displayed
-    - However we also would like to leave this week as a bit of a flex week because we are unsure if we will need to put more work into the front end display and make it look better or if we can solely focus on increasing the data we are showing
-November 28:
-    - We are unsure of the course timeline and are not sure what day Assignment 3 will be due but:
-    - Since this is the end of the semester this week will be for tying up anything that needs to be tied. We should have a project worthy of presentation by this date.
-3. 
-The datasets that we will use is YouTube Trending Videos in 2017-2018. We choose this because we consume YouTube videos in an unhealthy manner daily so we are wondering whether the time of day pertains to an increase number of views. We also want to see how much does comment counts increase in relation to view counts and compare that with like counts as well. We are curious about whether high number of comments in videos correlate more to increase of views or to increase of likes/dislikes number. Along the way, we will also probably find more information that's worth mentioning.
+    - Lucas should be done at least 1 set of data with some graphs included so that Cat can start working on making the front end display it properly.  
+    - Cat is blocked on Lucas so he will do some research on how Django interacts with custom HTML pages to be used for display instead of the build in pages  
+November 14:  
+    - Cat displays data on page.  
+    - Lucas adds more sets of data at least one of the ones outlined in A1  
+November 21:  
+    - In this week ideally we will be both adding new datas to our databank to be displayed  
+    - However we also would like to leave this week as a bit of a flex week because we are unsure if we will need to put more work into the front end display and make it look better or if we can solely focus on increasing the data we are showing  
+November 28:  
+    - We are unsure of the course timeline and are not sure what day Assignment 3 will be due but:  
+    - Since this is the end of the semester this week will be for tying up anything that needs to be tied. We should have a project worthy of presentation by this date.  
+3.   
+The datasets that we will use is YouTube Trending Videos in 2017-2018. We choose this because we consume YouTube videos in an unhealthy manner daily so we are wondering whether the time of day pertains to an increase number of views. We also want to see how much does comment counts increase in relation to view counts and compare that with like counts as well. We are curious about whether high number of comments in videos correlate more to increase of views or to increase of likes/dislikes number. Along the way, we will also probably find more information that's worth mentioning.  
 
-Adding onto this for Assignment 2. We thought it would be really interesting to show if there was any difference between the time it took for videos to be trending. Like for example the difference in number of comments between a video that trended after 1 day versus a video that trended after 100 days.
+Adding onto this for Assignment 2. We thought it would be really interesting to show if there was any difference between the time it took for videos to be trending. Like for example the difference in number of comments between a video that trended after 1 day versus a video that trended after 100 days.  
