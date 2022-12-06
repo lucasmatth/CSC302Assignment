@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Data</title>
+</head>
+<body>
+
+  <h1>Data by Hour</h1>
+  <p>This data examines the relationship between the number of views to the hour of days the videos are posted. </p>
+  <img width = "1300" height = "600" src="{% static 'mean_views_by_hour.png' %}">
+  <p>
+  The x-axis is the number of days between published time and trending time.
+  </p>
+  <img width = "1300" height = "600" src="{% static 'num_vid_by_hour.png' %}">
+  <p>
+  The y-axis is the percentage of videos that trends.
+  </p>
+  <p>The reason why we don't use number of videos instead is because we couldn't scale the y-axis down efficiently</p>
+
+</body>
+</html>
