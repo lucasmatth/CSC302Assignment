@@ -4,6 +4,14 @@ if command -v python3 >/dev/null 2>&1 ; then
 else
     echo "Python3 not found"
     sudo apt-get install python3
+    
+fi
+
+if command -v pip >/dev/null 2>%1 ; then
+    echo "Pip found"
+    echo "Version: $(pip --version)"
+else
+    echo "Pip not found"
     sudo apt install python3-pip
 fi
 
