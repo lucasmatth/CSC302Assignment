@@ -4,6 +4,7 @@ if command -v python3 >/dev/null 2>&1 ; then
 else
     echo "Python3 not found"
     sudo apt-get install python3
+    sudo apt install python3-pip
 fi
 
 if python3 -c 'import pkgutil; exit(not pkgutil.find_loader("django"))'; then
