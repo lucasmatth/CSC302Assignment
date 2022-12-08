@@ -9,6 +9,12 @@ def index(request):
 def first_data(request):
     return render(request, 'firstdata.html')
 
+def second_data(request):
+    return render(request, 'seconddata.html')
+
+def third_data(request):
+    return render(request, 'thirddata.html')
+
 def date_til_trend(request):
     stats_f = open("../../data analysis/days til trend/data")
     stats = json.load(stats_f)
