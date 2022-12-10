@@ -4,20 +4,109 @@
 <head>
   <meta charset="utf-8" />
   <title>Data</title>
+  <style>
+    body {font-family: Arial;}
+
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      -webkit-animation: fadeEffect 1s;
+      animation: fadeEffect 1s;
+    }
+
+    @-webkit-keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
 </head>
 <body>
 
   <h1>Data by Hour</h1>
-  <p>This data examines the relationship between the number of views to the hour of days the videos are posted. </p>
-  <img width = "1300" height = "600" src="{% static 'mean_views_by_hour.png' %}">
-  <p>
-  The x-axis is the number of days between published time and trending time.
-  </p>
-  <img width = "1300" height = "600" src="{% static 'num_vid_by_hour.png' %}">
-  <p>
-  The y-axis is the percentage of videos that trends.
-  </p>
-  <p>The reason why we don't use number of videos instead is because we couldn't scale the y-axis down efficiently</p>
+  <p>This data examines the relationship between the number of videos, view counts, number of comments anad number of likes to the hour of days the videos are posted. Note that the hour that we examine are done locally, so when we say 4pm time, our data gathers videos that occurr at 4pm in America and also 4pm in Japan.</p>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Views')">Views</button>
+    <button class="tablinks" onclick="openCity(event, 'Comments')">Comments</button>
+    <button class="tablinks" onclick="openCity(event, 'Likes')">Likes</button>
+  </div>
 
+  <div id="Views" class="tabcontent">
+    <h3>Examining The Hour of Days' Effect on Views</h3>
+    <img width = "1300" height = "600" src="{% static 'num_vid_by_hour.png' %}">
+  <p>What we find is that most videos are posted at 4pm in the afternoon, with around 1700 videos there posted every day. At 1am, the amount of videos posted are at the least number</p>
+  <img width = "1300" height = "600" src="{% static 'total_views_by_hour.png' %}">
+  <p>We can see a strong correlation with this graph and the last, where most views occur on 4pm. What is significantly different we find is at hour 4, the number of views are at a much staggering height than other values. This could suggest that people watch videos at 4am occurringly, maybe when they lose sleep.</p>
+  <img width = "1300" height = "600" src="{% static 'mean_views_by_hour.png' %}">
+  <p>And this graph shows us just solidify our findings from the last two graphs. It seems that the average amount of views occur at 4 am.</p>
+  </div>
+
+  <div id="Comments" class="tabcontent">
+    <h3>Examining The Hour of Days' Effect on Comments</h3>
+  <img width = "1300" height = "600" src="{% static 'total_comments_by_hour.png' %}">
+  <p>The most amount of comments occurr at 4pm. We can see that the number of comments posted is low when people are sleeping, from 0 to 7am. </p>
+  <img width = "1300" height = "600" src="{% static 'mean_comments_by_hour.png' %}">
+  <p>But per videos posted, it seems like the best time people usually comment in YouTube videos is at 10pm, when people are about to go to sleep.</p>
+  </div>
+
+  <div id="Likes" class="tabcontent">
+    <h3>Examining The Hour of Days' Effect on Likes</h3>
+    <img width = "1300" height = "600" src="{% static 'total_likes_by_hour.png' %}">
+  <p>The number of likes are substantially high at around 4pm, with the number of likes low at 0-3am.</p>
+  <img width = "1300" height = "600" src="{% static 'mean_likes_by_hour.png' %}">
+  <p>The average number of likes peak at 9am, but in terms of an average consesuctive high number of likes, we would want the videos to be posted around 4pm-7pm.</p>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+    </ul>
+    <ul>
+      <li><a href="{% url 'first_data' %}">Data by Days</a></li>
+    </ul>
+  </nav>
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
 </body>
 </html>

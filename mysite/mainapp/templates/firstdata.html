@@ -80,7 +80,10 @@
     </p>
     <img width = "1200" height = "400" src="{% static 'sd_byday_com.png' %}">
     <p>
-      Lastly, we examine how spaced out the number of comments are after some days passed are. We see that for most videos, 
+      Lastly, we examine how spaced out the number of comments are after some days passed. We find that it peaks on day 4 and 18 specifically with there being a slower decline than the other graphs.
+    </p>
+    <p>
+      <b>Fun Fact:</b> The video with the most comments is the Logal Paul Vlogs video named "So Sorry" which coincidentally has the most amount of dislikes.
     </p>
   </div>
 
@@ -100,7 +103,7 @@
     </p>
     <img width = "1200" height = "400" src="{% static 'sd_byday_views.png' %}">
     <p>
-      Lastly, we examine how spaced out the number of comments are after some days passed.
+      The measure of spaciousness here seems to be the most uniform out of all the standard deviation graphs that we've created. This might be due to the fact that views are much less unpredictable than other measures. Whereas comments and likes/dislikes depend on whether the person wants to leave those there, views are much more predictable in that the person just needs to click the video and the view is automatically counted.
   </div>
 
   <div id="Likes & Dislikes" class="tabcontent">
@@ -118,11 +121,11 @@
     </p>
     <img width = "1200" height = "400" src="{% static 'mean_likes_byday.png' %}">
     <p>
-      The word mean means average. This means the average number of comments that appears on trending videos happens on day 33 with it reaching to about 62,000 comments on its videos. This is to be expected since for our previous graph, we see that the number of comments reach 10,000,000 on day 1. And since our graph has many outliers to the right, the average comments would then be somewhere around the number 30.
+      It seems like the most average amount of likes occur on day 31 in a video. This is similar to the Comments count graph where it also lies on a similar day. 
     </p>
     <img width = "1200" height = "400" src="{% static 'sd_likes_byday.png' %}">
     <p>
-      Lastly, we examine how spaced out the number of comments are after some days passed.
+      The number of likes standard deviation is a nice uniform graph. This might be due to the fact that the number of likes are more predictable than other metrics.
     </p>
     <img width = "1200" height = "400" src="{% static 'total_dislikes_byday.png' %}">
     <p>
@@ -139,7 +142,14 @@
     <p>
       Lastly, we examine how spaced out the number of comments are after some days passed.
   </div>
-
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+    </ul>
+    <ul>
+      <li><a href="{% url 'second_data' %}">Data by Hours</a></li>
+    </ul>
+  </nav>
   <script>
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;

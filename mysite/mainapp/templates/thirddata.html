@@ -12,6 +12,17 @@
   <img width = "1300" height = "600" src="{% static 'num_of_vid_by_view.png' %}">
 
   <p>From what we can gather in this graph,, </p>
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+    </ul>
+    <ul>
+      <li><a href="{% url 'first_data' %}">Data By Days</a></li>
+    </ul>
+    <ul>
+      <li><a href="{% url 'second_data' %}">Data by Hours</a></li>
+    </ul>
+  </nav>
 
 </body>
 </html>
